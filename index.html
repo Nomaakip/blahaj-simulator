@@ -6,21 +6,43 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta content="blahaj simulator" property="og:title">
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link
-        href="https://fonts.googleapis.com/css2?family=Delius+Swash+Caps&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap"
-        rel="stylesheet">
+
+<style>
+@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+
+* {
+font-family: 'Poppins';
+}
+#greg {
+background-color: red;
+color: white;
+border: none;
+padding: 5px;
+transition: 0.3s;
+}
+#greg:hover {
+background-color: darkred;
+}
+#now {
+background-color: gold;
+border: yellow 3px solid;
+transition: 0.3s;
+}
+#now:hover {
+background-color: #BC9A01;
+color: white;
+}
+</style>
 </head>
-<button id="greg" onclick="erase()">erase save data</button>
 <div id="test" onclick="clicked()">
     <img src="file (4).png" alt="blahaj" height="150" width="150" id="blahajimg">
 </div>
-<div id="smol-blahajs"></div>
 <h1 id="blahajcount">you currently have: 0 blahaj</h1>
 <audio src="clicked.mp3" id="clicksound"></audio>
 <script src="blahaj.js"></script>
 <input type="number" id="gamble">
 <button id="now" onclick="gambling()">gamble now!</button>
 <h1 id="yes"></h1>
+<div id="smol-blahajs"></div>
+<button id="greg" onclick="erase()">erase save data</button>
 </html>

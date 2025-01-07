@@ -2,6 +2,8 @@ let blahajdisplay = document.getElementById("blahajcount");
 let blahajimg = document.getElementById("blahajimg");
 let blahaj = 0;
 let saved = JSON.parse(localStorage.answer);
+let stupidscript = false;
+let timeout;
 blahaj = saved;
 localStorage.answer = JSON.stringify(blahaj);
 
@@ -53,6 +55,11 @@ function gambling() {
     }
 
     else {
+    if (rawInput == 0) {
+        yes.innerHTML = "You gambled nothing, thus winning absolutely nothing.";
+    }
+
+    else {
     if (gamblerng == 1) {
         blahaj += test2;
         yes.innerHTML = "You won " + test2 + " blahajs! You now have " + blahaj + " blahajs!";
@@ -69,11 +76,22 @@ function gambling() {
     updatesmol();
 }
 }
+}
 
 function erase() {
-    localStorage.clear();
-    location.reload();
+    if (!stupidscript) {
+        alert("Are you absolutely sure? This will clear all progress you've made. (click again to wipe)");
+        stupidscript = true;
+        timeout = setTimeout(() => {
+            stupidscript = false;
+        }, 10000);
+    } else {
+        clearTimeout(timeout);
+        localStorage.clear();
+        location.reload();
+    }
 }
+
 
 function test() {
     blahaj = saved;
