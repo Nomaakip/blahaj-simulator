@@ -1,11 +1,16 @@
 let blahajdisplay = document.getElementById("blahajcount");
 let blahajimg = document.getElementById("blahajimg");
-let blahaj = 0;
-let saved = JSON.parse(localStorage.answer);
 let stupidscript = false;
 let timeout;
-blahaj = saved;
-localStorage.answer = JSON.stringify(blahaj);
+let blahaj = localStorage.getItem('blahaj');
+
+if (blahaj) {
+    blahaj = blahaj;
+}
+
+else {
+    blahaj = 1;
+}
 
 
 
@@ -32,16 +37,16 @@ setTimeout(() => {
     setTimeout(() => blahajimg.height = 150, 0);
 }, 100);
 document.getElementById('clicksound').play();
-localStorage.answer = JSON.stringify(blahaj);
+localStorage.setItem('blahaj', blahaj);
 updatesmol();
 }
 
 function updatesmol() {
     const smol = document.getElementById("smol-blahajs");
     if(blahaj >= 1)
-        smol.innerHTML = "<img src=\"file (4).png\" alt=\"smol blahaj\" height=\"75\" width=\"75\">".repeat(blahaj - 1);
+        document.getElementById("smol-blahajs").innerHTML = "<img src=\"file (4).png\" alt=\"smol blahaj\" height=\"75\" width=\"75\">".repeat(blahaj - 1);
     else
-        smol.innerHTML = "";
+    document.getElementById("smol-blahajs").innerHTML = "";
 }
 
 function gambling() {
@@ -64,14 +69,14 @@ function gambling() {
         blahaj += test2;
         yes.innerHTML = "You won " + test2 + " blahajs! You now have " + blahaj + " blahajs!";
         blahajdisplay.innerHTML = "you currently have: " + blahaj + " blahajs";
-        localStorage.answer = JSON.stringify(blahaj);
+        localStorage.setItem('blahaj', blahaj);
     }
 
     else {
         blahaj -= test2;
         yes.innerHTML = "You lost " + test2 + " blahajs. You now have " + blahaj + " blahajs.";
         blahajdisplay.innerHTML = "you currently have: " + blahaj + " blahajs";
-        localStorage.answer = JSON.stringify(blahaj);
+        localStorage.setItem('blahaj', blahaj);
     }
     updatesmol();
 }
@@ -93,9 +98,5 @@ function erase() {
 }
 
 
-function test() {
-    blahaj = saved;
-}
 
-test();
 updatesmol();
