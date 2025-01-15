@@ -52,9 +52,7 @@ blahajdisplay.innerHTML = "you currently have: " + blahaj + " blahajs";
 blahajimg.style.transform = 'scale(0.75)';
 
 
-if (blahaj >= 30 && !hypercuber) {
-    document.getElementById("hyper").disabled = false;
-}
+
 setTimeout(() => {
     setTimeout(() => 
         blahajimg.style.transform = 'scale(1)');
@@ -62,6 +60,7 @@ setTimeout(() => {
 document.getElementById('clicksound').play();
 localStorage.setItem('blahaj', blahaj);
 updatesmol();
+    checks();
 }
 
 function updatesmol() {
