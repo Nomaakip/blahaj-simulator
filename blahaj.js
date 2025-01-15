@@ -17,7 +17,7 @@ else {
 
 if (blahaj) {
     blahaj = blahaj;
-    blahaj++;
+    
 }
 
 else {
@@ -156,3 +156,4 @@ function checks() {
 }
 
 updatesmol();
+clicked();
