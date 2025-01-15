@@ -103,10 +103,9 @@ function gambling() {
         blahajdisplay.innerHTML = "you currently have: " + blahaj + " blahajs";
         localStorage.setItem('blahaj', blahaj);
     }
-        if (blahaj >= 30 && !hypercuber) {
-    document.getElementById("hyper").disabled = false;
-        }
+        
     updatesmol();
+        checks();
 }
 }
 }
@@ -150,6 +149,10 @@ if (blahaj <= 1) {
 }
 }
 }
-
+function checks() {
+    if (blahaj >= 30 && !hypercuber) {
+    document.getElementById("hyper").disabled = false;
+}
+}
 
 updatesmol();
