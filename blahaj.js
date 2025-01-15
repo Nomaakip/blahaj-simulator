@@ -3,6 +3,7 @@ let blahajimg = document.getElementById("blahajimg");
 let stupidscript = false;
 let timeout;
 let blahaj = localStorage.getItem('blahaj');
+let hypercuber = false;
 
 if (blahaj) {
     blahaj = blahaj;
@@ -25,14 +26,15 @@ if (blahaj <= 1) {
 
 function clicked() {
 blahaj++;
-if (blahaj == 1) {
-blahajdisplay.innerHTML = "you currently have: " + blahaj + " blahaj";
-}
 
-else if (blahaj >= 2) {
+blahajdisplay.innerHTML = "you currently have: " + blahaj + " blahaj";
+
 blahajdisplay.innerHTML = "you currently have: " + blahaj + " blahajs";
-}
+
 blahajimg.height = 130;
+if (hypercuber) {
+    blahaj++;
+}
 setTimeout(() => {
     setTimeout(() => blahajimg.height = 150, 0);
 }, 100);
@@ -55,12 +57,14 @@ function gambling() {
     let test2 = Number(rawInput);
     let gamblerng = Math.floor(Math.random()* 2)
 
+
+
     if (blahaj < rawInput ) {
         yes.innerHTML = "You can't gamble more blahajs than you have!";
     }
 
     else {
-    if (rawInput == 0) {
+    if (rawInput <= 0) {
         yes.innerHTML = "You gambled nothing, thus winning absolutely nothing.";
     }
 
@@ -97,6 +101,21 @@ function erase() {
     }
 }
 
+function hyperblahaj() {
+    if (blahaj <= 30) {
+        console.log("not enough blahajs!")
+    }
+
+else {
+if (!hypercuber) {
+    hypercuber = true;
+    console.log(hypercuber);
+}
+else {
+    console.log("already bought!");
+}
+}
+}
 
 
 updatesmol();
