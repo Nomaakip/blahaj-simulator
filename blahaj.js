@@ -17,13 +17,14 @@ else {
 
 if (blahaj) {
     blahaj = blahaj;
+    blahaj++;
 }
 
 else {
     blahaj = 0;
 }
 
-blahaj++;
+
 
 
 
