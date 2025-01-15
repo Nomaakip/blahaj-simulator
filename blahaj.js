@@ -10,7 +10,7 @@ if (blahaj) {
 }
 
 else {
-    blahaj = 1;
+    blahaj = 0;
 }
 
 
