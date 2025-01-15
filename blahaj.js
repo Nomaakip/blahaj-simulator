@@ -16,7 +16,7 @@ else {
 }
 
 if (blahaj) {
-    blahaj = blahaj;
+    blahaj = Number(blahaj);
     
 }
 
