@@ -3,7 +3,17 @@ let blahajimg = document.getElementById("blahajimg");
 let stupidscript = false;
 let timeout;
 let blahaj = localStorage.getItem('blahaj');
-let hypercuber = false;
+let hypercuber = localStorage.getItem('hypercuber');
+
+if (hypercuber) {
+    hypercuber = hypercuber;
+    document.getElementById("hyper").disabled = true;
+}
+
+else {
+    hypercuber = false;
+    document.getElementById("hyper").disabled = true;
+}
 
 if (blahaj) {
     blahaj = blahaj;
@@ -12,6 +22,8 @@ if (blahaj) {
 else {
     blahaj = 0;
 }
+
+
 
 
 
@@ -25,18 +37,27 @@ if (blahaj <= 1) {
 
 
 function clicked() {
+    if (hypercuber) {
+        blahaj++;
+    }
+
+
 blahaj++;
+
 
 blahajdisplay.innerHTML = "you currently have: " + blahaj + " blahaj";
 
 blahajdisplay.innerHTML = "you currently have: " + blahaj + " blahajs";
 
-blahajimg.height = 130;
-if (hypercuber) {
-    blahaj++;
+blahajimg.style.transform = 'scale(0.75)';
+
+
+if (blahaj >= 30 && !hypercuber) {
+    document.getElementById("hyper").disabled = false;
 }
 setTimeout(() => {
-    setTimeout(() => blahajimg.height = 150, 0);
+    setTimeout(() => 
+        blahajimg.style.transform = 'scale(1)');
 }, 100);
 document.getElementById('clicksound').play();
 localStorage.setItem('blahaj', blahaj);
@@ -46,7 +67,7 @@ updatesmol();
 function updatesmol() {
     const smol = document.getElementById("smol-blahajs");
     if(blahaj >= 1)
-        document.getElementById("smol-blahajs").innerHTML = "<img src=\"file (4).png\" alt=\"smol blahaj\" height=\"75\" width=\"75\">".repeat(blahaj - 1);
+        document.getElementById("smol-blahajs").innerHTML = "<img src=\"file (4).png\" alt=\"smol blahaj\" height=\"75\" width=\"75\">".repeat(blahaj);
     else
     document.getElementById("smol-blahajs").innerHTML = "";
 }
@@ -110,10 +131,19 @@ else {
 if (!hypercuber) {
     hypercuber = true;
     blahaj -= 30;
+    alr.innerHTML = 'sucessfully bought!';
+    localStorage.setItem('hypercuber', hypercuber);
+    document.getElementById("hyper").disabled = true;
+    
+if (blahaj <= 1) {
+    blahajdisplay.innerHTML = "you currently have: " + blahaj + " blahaj";
+    }
+    
+    else if (blahaj >= 2) {
+    blahajdisplay.innerHTML = "you currently have: " + blahaj + " blahajs";
+    }
+    localStorage.setItem('blahaj', blahaj);
     console.log(hypercuber);
-}
-else {
-    console.log("already bought!");
 }
 }
 }
