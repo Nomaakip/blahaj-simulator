@@ -109,6 +109,7 @@ function hyperblahaj() {
 else {
 if (!hypercuber) {
     hypercuber = true;
+    blahaj -= 30;
     console.log(hypercuber);
 }
 else {
