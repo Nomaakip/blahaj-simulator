@@ -23,6 +23,7 @@ else {
     blahaj = 0;
 }
 
+blahaj++;
 
 
 
