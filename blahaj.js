@@ -77,8 +77,8 @@ function gambling() {
     let inputElement = document.getElementById("gamble");
     let rawInput = inputElement.value;
     let test2 = Number(rawInput);
-    let gamblerng = Math.floor(Math.random()* 1)
-
+    let gamblerng = Math.floor(Math.random()* 1);
+    blahaj++;
 
 
     if (blahaj < rawInput ) {
